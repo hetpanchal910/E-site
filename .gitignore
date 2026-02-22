@@ -1,0 +1,15 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+Frontend/node_modules/
+Backend/node_modules/
+
+# Environment variables
+Frontend/.env
+Backend/.env
+
+# Mac system files
+.DS_Store

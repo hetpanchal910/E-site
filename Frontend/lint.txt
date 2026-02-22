@@ -1,0 +1,69 @@
+﻿
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\components\Layout\Navbar.jsx
+  13:13  error  'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\components\Products\FilterSideBar.jsx
+  23:11  error  'materials' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  24:11  error  'brands' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-unused-vars
+  30:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  28 |         const params = Object.fromEntries([...searchParams]);
+  29 |
+> 30 |         setFilters({
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |             category: params.category || "",
+  32 |             gender: params.gender || "",
+  33 |             color: params.color || "",  react-hooks/set-state-in-effect
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\components\Products\ProductDetails.jsx
+  34:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  32 |     useEffect(() => {
+  33 |         if (selectedProduct?.images?.length > 0) {
+> 34 |             setMainImage(selectedProduct.images[0].url);
+     |             ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |         }
+  36 |     }, [selectedProduct]);
+  37 |  react-hooks/set-state-in-effect
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\components\Products\SortProducts.jsx
+  1:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\pages\CollectionPage.jsx
+  25:8  warning  React Hook useEffect has a missing dependency: 'queryParams'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\hetpa\OneDrive\Desktop\E-Commerce\Frontend\src\pages\OrderDetailsPage.jsx
+  34:11  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  32 |                 }
+  33 |             ]
+> 34 |         };setOrderDetails(mockOrderDetails)
+     |           ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |     },[id])
+  36 |   return (
+  37 |       <div className="max-w-7xl mx-auto p-4 sm:p-6 ">  react-hooks/set-state-in-effect
+
+Γ£û 8 problems (7 errors, 1 warning)
+
