@@ -9,8 +9,7 @@ const router = express.Router();
 // @access  Private
 router.get("/my-orders", protect, async (req, res) => {
     try {
-        // Fetch all orders for the currently logged-in user
-        // Sort by creation date in descending order (most recent first)
+      
         const orders = await Order.find({ user: req.user._id }).sort({
             createdAt: -1,
         });
@@ -27,7 +26,7 @@ router.get("/my-orders", protect, async (req, res) => {
 // @access  Private
 router.get("/:id", protect, async (req, res) => {
     try {
-        // Find order by ID and populate the user field to include name and email
+       
         const order = await Order.findById(req.params.id).populate(
             "user",
             "name email"

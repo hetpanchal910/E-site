@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// --- Async Thunks ---
 
-// Fetch products based on various filters
 export const fetchProductsByFilters = createAsyncThunk(
     "products/fetchByFilters",
     async (
@@ -99,7 +97,7 @@ export const updateProduct = createAsyncThunk(
     }
 );
 
-// --- Slice Definition ---
+//  Slice Definition
 
 const productsSlice = createSlice({
     name: "products",

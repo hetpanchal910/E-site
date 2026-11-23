@@ -198,7 +198,6 @@ router.get("/similar/:id", async (req, res) => {
             return res.status(404).json({ message: "Product not found" });
         }
 
-        // Find products in the same category and gender, excluding the current product
         const similarProducts = await Product.find({
             _id: { $ne: product._id },
             gender: product.gender,
